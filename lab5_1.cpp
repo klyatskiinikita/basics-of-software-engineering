@@ -20,15 +20,36 @@ int main()
     cin >> x;
     if (x < 1 && c != 0)
     {
-        F = ((a * pow(x, 2)) / b) + (pow(b, 2) / c);
+        if (b != 0)
+        {
+            F = ((a * pow(x, 2)) / b) + (pow(b, 2) / c);
+        }
+        else
+        {
+            cout << "Не задовільняє ОДЗ" << endl;
+        }
     }
     else if (x > 1 || c == 0)
     {
-        F = (fabs(x - a) / (x - c));
+        if ((x - c) != 0)
+        {
+            F = (fabs(x - a) / (x - c));
+        }
+        else
+        {
+            cout << "Не задовільняє ОДЗ" << endl;
+        }
     }
     else
     {
-        F = (10 / pow(c, 2));
+        if (pow(c, 2) != 0)
+        {
+            F = (10 / pow(c, 2));
+        }
+        else
+        {
+            cout << "Не задовільняє ОДЗ" << endl;
+        }
     }
     cout << "F = " << F << endl;
     system("pause");
